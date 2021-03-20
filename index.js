@@ -10,6 +10,10 @@ const server = Hapi.server({
     host: 'localhost',
 });
 
+server.bind({
+    pois: [],
+});
+
 async function init() {
     await server.register(Inert);
     await server.register(Vision);
@@ -35,8 +39,6 @@ process.on('unhandledRejection', (err) => {
     process.exit(1);
 });
 
-server.bind({
-    donations: [],
-});
+
 
 init();

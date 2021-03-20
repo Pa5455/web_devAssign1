@@ -8,10 +8,11 @@ module.exports = [
     { method: "GET", path: "/logout", config: Accounts.logout },
     { method: "POST", path: "/signup", config: Accounts.signup },
     { method: "POST", path: "/login", config: Accounts.login },
-    { method: 'POST', path: '/poi', config: Pois.poi },
+
 
     { method: "GET", path: "/home", config: Pois.home },
-    { method: "POST", path: "/report", config: Pois.report },
+    { method: 'POST', path: '/poi', config: Pois.poi },
+    { method: "GET", path: "/report", config: Pois.report },
 
     {
         method: 'GET',

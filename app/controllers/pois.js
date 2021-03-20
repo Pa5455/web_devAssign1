@@ -10,7 +10,7 @@ const Pois = {
         handler: function (request, h) {
             return h.view("report", {
                 title: "Farm Data POI entered so far: ",
-                donations: this.donations,
+                pois: this.pois,
             });
         },
     },
