@@ -44,7 +44,24 @@ const Accounts = {
             request.cookieAuth.clear();
             return h.redirect('/');
         }
-    }
+    },
+
+    showSettings: {
+        handler: function(request, h) {
+            var sales_personEmail = request.auth.credentials.id;
+            const userDetails = this.users[sales_personEmail];
+            return h.view('settings', { title: 'Farm POI Settings', user: userDetails });
+        }
+    },
+    updateSettings: {
+        handler: function(request, h) {
+            const user = request.payload;
+            this.users[user.email] = user;
+            return h.redirect('/settings');
+        }
+    },
+
+
 };
 
 module.exports = Accounts;
