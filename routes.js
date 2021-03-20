@@ -1,5 +1,5 @@
 const Accounts = require("./app/controllers/accounts");
-const Pois = require('./app/controllers/pois');
+const Pois = require("./app/controllers/pois");
 
 module.exports = [
     { method: "GET", path: "/", config: Accounts.index },
@@ -8,10 +8,11 @@ module.exports = [
     { method: "GET", path: "/logout", config: Accounts.logout },
     { method: "POST", path: "/signup", config: Accounts.signup },
     { method: "POST", path: "/login", config: Accounts.login },
-
+    { method: 'GET', path: '/settings', config: Accounts.showSettings },
+    { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
     { method: "GET", path: "/home", config: Pois.home },
-    { method: 'POST', path: '/poi', config: Pois.poi },
+    { method: "POST", path: "/donate", config: Pois.poi},
     { method: "GET", path: "/report", config: Pois.report },
 
     {
