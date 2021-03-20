@@ -1,17 +1,25 @@
+"use strict";
+
 const Pois = {
-    index: {
+    home: {
         handler: function (request, h) {
-            return h.file('./app/views/main.html');
+            return h.view("home", {title: "Enter a POI farm"});
         },
     },
-    signup: {
+    report: {
         handler: function (request, h) {
-            return h.file('./app/views/signup.html');
+            return h.view("report", {
+                title: "Farm Data POI entered so far: ",
+                pois: this.pois,
+            });
         },
     },
-    login: {
+    poi: {
         handler: function (request, h) {
-            return h.file('./app/views/login.html');
+            let data = request.payload;
+            data.sales_person = this.currentUser;
+            this.pois.push(data);
+            return h.redirect("/report");
         },
     },
 };

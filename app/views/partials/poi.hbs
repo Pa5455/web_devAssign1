@@ -1,0 +1,28 @@
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+    <form class="uk-form-stacked uk-text-left" action="/poi" method="POST">
+        <div class="uk-grid uk-grid-stack">
+            <div class="uk-width-1-2@m">
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Farm Name and address</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="text" name="id" placeholder="Name and address" />
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <div class="uk-form-label">Category</div>
+                    <div class="uk-form-controls">
+                        <label><input class="uk-radio" type="radio" name="method" value="Dairy" /> Dairy </label><br />
+                        <label><input class="uk-radio" type="radio" name="method" value="Tilage" /> Tilage </label><br />
+                        <label><input class="uk-radio" type="radio" name="method" value="Beef" /> Beef </label><br />
+                        <label><input class="uk-radio" type="radio" name="method" value="Sheep" /> Sheep </label>
+                    </div>
+                </div>
+            </div>
+            <div class=" uk-width-1-2@m">
+                <div class="uk-margin">
+                    <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Submit Farm POI</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
