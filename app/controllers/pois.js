@@ -1,17 +1,14 @@
+"use strict";
+
 const Pois = {
-    index: {
+    home: {
         handler: function (request, h) {
-            return h.view('main', { title: 'Welcome to Farm Sales POI' });
+            return h.view("home", { title: "Enter a POI farm" });
         },
     },
-    signup: {
+    report: {
         handler: function (request, h) {
-            return h.view('signup', { title: 'Sign up for POI' });
-        },
-    },
-    login: {
-        handler: function (request, h) {
-            return h.view('login', { title: 'Login to Donations' });
+            return h.view("report", { title: "Farms entered so far" });
         },
     },
 };

@@ -1,0 +1,28 @@
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+    <form class="uk-form-stacked uk-text-left" action="/donate" method="POST">
+        <div class="uk-grid uk-grid-stack">
+            <div class="uk-width-1-2@m">
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Farm Name and address</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="text" name="id" placeholder="name address" />
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <div class="uk-form-label">Category</div>
+                    <div class="uk-form-controls">
+                        <label><input class="uk-radio" type="radio" name="method" value="dairy" /> Dairy </label><br />
+                        <label><input class="uk-radio" type="radio" name="method" value="tilage" /> Tilage </label>
+                        <label><input class="uk-radio" type="radio" name="method" value="beef" /> Beef </label><br />
+                        <label><input class="uk-radio" type="radio" name="method" value="sheep" /> Sheep </label>
+                    </div>
+                </div>
+            </div>
+            <div class=" uk-width-1-2@m">
+                <div class="uk-margin">
+                    <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Submit Farm</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
