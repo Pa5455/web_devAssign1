@@ -6,12 +6,14 @@
         <thead>
         <th>Farm Name and Address</th>
         <th>Main Enterprise</th>
+        <th>Sales Person</th>
         </thead>
         <tbody class="uk-text-left">
         {{#each pois}}
             <tr>
                 <td>{{id}}</td>
                 <td>{{method}}</td>
+                <td>{{sales_person.firstName}} {{sales_person.lastName}}</td>
             </tr>
         {{/each}}
         </tbody>

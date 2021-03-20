@@ -16,7 +16,8 @@ const Pois = {
     },
     poi: {
         handler: function (request, h) {
-            const data = request.payload;
+            let data = request.payload;
+            data.sales_person = this.currentUser;
             this.pois.push(data);
             return h.redirect("/report");
         },

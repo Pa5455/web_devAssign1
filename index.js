@@ -11,7 +11,9 @@ const server = Hapi.server({
 });
 
 server.bind({
+    users: [],
     pois: [],
+    currentUser: {},
 });
 
 async function init() {
