@@ -1,0 +1,19 @@
+{
+  "name": "assignment1webdev",
+  "version": "1.0.0",
+  "description": "POI app for assignment 1 Enterprise Web DEV 2021 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "P Curran",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.1.1",
+    "@hapi/inert": "^6.0.3",
+    "prettier": "^2.2.1"
+  },
+  "prettier": {
+    "printWidth": 120
+  }
+}
