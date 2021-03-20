@@ -11,12 +11,14 @@
   "dependencies": {
     "@hapi/boom": "^9.1.2",
     "@hapi/cookie": "^11.0.2",
-    "@hapi/hapi": "^20.1.1",
+    "@hapi/hapi": "^20.1.0",
     "@hapi/inert": "^6.0.3",
     "@hapi/vision": "^6.0.1",
     "dotenv": "^8.2.0",
-    "handlebars": "^4.7.7",
-    "mongoose": "^5.12.1",
+    "handlebars": "^4.7.6",
+    "mongoose": "^5.11.15"
+  },
+  "devDependencies": {
     "prettier": "^2.2.1"
   },
   "prettier": {
