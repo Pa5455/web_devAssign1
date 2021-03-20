@@ -3,13 +3,13 @@
 const Pois = {
     home: {
         handler: function (request, h) {
-            return h.view("home", {title: "Enter a POI farm"});
+            return h.view("home", { title: "Add Farm POI" });
         },
     },
     report: {
         handler: function (request, h) {
             return h.view("report", {
-                title: "Farm Data POI entered so far: ",
+                title: "Farm POI entries to Date",
                 pois: this.pois,
             });
         },
@@ -24,5 +24,4 @@ const Pois = {
         },
     },
 };
-
 module.exports = Pois;

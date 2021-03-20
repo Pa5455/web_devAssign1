@@ -6,6 +6,8 @@ const Vision = require('@hapi/vision');
 const Handlebars = require('handlebars');
 const Cookie = require("@hapi/cookie");
 const env = require('dotenv');
+require('./app/models/db');
+
 
 
 env.config();
@@ -15,10 +17,6 @@ const server = Hapi.server({
     host: 'localhost',
 });
 
-server.bind({
-    users: [],
-    pois: [],
-});
 
 async function init() {
     await server.register(Inert);
