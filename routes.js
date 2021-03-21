@@ -14,6 +14,7 @@ module.exports = [
     { method: "GET", path: "/home", config: Pois.home },
     { method: "POST", path: "/poi", config: Pois.poi},
     { method: "GET", path: "/report", config: Pois.report },
+    { method: 'GET', path: '/delete-poi/{_id}', config: Pois.deletePoi },
 
     {
         method: 'GET',

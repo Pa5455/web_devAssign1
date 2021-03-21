@@ -4,16 +4,23 @@
             Farm Address added to date
         </caption>
         <thead>
-        <th>Farm Name and Address</th>
+        <th>Farm Name</th>
+        <th>Eircode</th>
         <th>Main Enterprise</th>
+        <th>County</th>
         <th>Sales Person</th>
         </thead>
         <tbody class="uk-text-left">
         {{#each pois}}
             <tr>
                 <td>{{farmer_name}}</td>
+                <td>{{eircode}}</td>
                 <td>{{method}}</td>
+                <td>{{county}}</td>
                 <td>{{sales_person.firstName}} {{sales_person.lastName}}</td>
+                <td>
+                    <a href="/delete-poi/{{_id}}" class="ui tiny red button">Delete Poi</a>
+                </td>
             </tr>
         {{/each}}
         </tbody>
