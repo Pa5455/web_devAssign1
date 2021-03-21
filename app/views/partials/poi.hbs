@@ -3,9 +3,15 @@
         <div class="uk-grid uk-grid-stack">
             <div class="uk-width-1-2@m">
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Farm Name and address</label>
+                    <label class="uk-form-label" for="form-stacked-text">Farm Name</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="text" name="id" placeholder="Name and address" />
+                        <input class="uk-input" id="form-stacked-text" type="text" name="farmer_name" placeholder="Farm Name" />
+                    </div>
+                    <div class="uk-margin">
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-stacked-text" type="text" name="eircode" placeholder="Eircode" />
+                        </div>
+
                     </div>
                 </div>
                 <div class="uk-margin">
@@ -16,11 +22,50 @@
                         <label><input class="uk-radio" type="radio" name="method" value="Beef" /> Beef </label><br />
                         <label><input class="uk-radio" type="radio" name="method" value="Sheep" /> Sheep </label>
                     </div>
+                    <div class="uk-margin">
+                    <div class="uk-form-label">County</div>
+                    <div class="uk-form-controls">
+                        <select name="county">
+                            <option value="antrim">Antrim</option>
+                            <option value="armagh">Armagh</option>
+                            <option value="carlow">Carlow</option>
+                            <option value="cavan">Cavan</option>
+                            <option value="clare">Clare</option>
+                            <option value="cork">Cork</option>
+                            <option value="derry">Derry</option>
+                            <option value="donegal">Donegal</option>
+                            <option value="down">Down</option>
+                            <option value="dublin">Dublin</option>
+                            <option value="fermanagh">Fermanagh</option>
+                            <option value="galway">Galway</option>
+                            <option value="kerry">Kerry</option>
+                            <option value="kildare">Kildare</option>
+                            <option value="kilkenny">Kilkenny</option>
+                            <option value="laois">Laois</option>
+                            <option value="leitrim">Leitrim</option>
+                            <option value="limerick">Limerick</option>
+                            <option value="longford">Longford</option>
+                            <option value="louth">Louth</option>
+                            <option value="mayo">Mayo</option>
+                            <option value="meath">Meath</option>
+                            <option value="monaghan">Monaghan</option>
+                            <option value="offaly">Offaly</option>
+                            <option value="roscommon">Roscommon</option>
+                            <option value="sligo">Sligo</option>
+                            <option value="tipperary">Tipperary</option>
+                            <option value="tyrone">Tyrone</option>
+                            <option value="waterford">Waterford</option>
+                            <option value="westmeath">Westmeath</option>
+                            <option value="wexford">Wexford</option>
+                            <option value="wicklow">Wicklow</option>
+                        </select>
+                    </div>
+                    </div>
                 </div>
             </div>
             <div class=" uk-width-1-2@m">
                 <div class="uk-margin">
-                    <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Submit Farm sPOI</button>
+                    <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Submit Farm POI</button>
                 </div>
             </div>
         </div>

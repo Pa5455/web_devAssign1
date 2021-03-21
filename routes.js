@@ -12,8 +12,9 @@ module.exports = [
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
     { method: "GET", path: "/home", config: Pois.home },
-    { method: "POST", path: "/donate", config: Pois.poi},
+    { method: "POST", path: "/poi", config: Pois.poi},
     { method: "GET", path: "/report", config: Pois.report },
+    { method: 'GET', path: '/delete-poi/{_id}', config: Pois.deletePoi },
 
     {
         method: 'GET',
