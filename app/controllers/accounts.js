@@ -1,6 +1,7 @@
 'use strict';
 const User = require('../models/user');
 const Boom = require("@hapi/boom");
+const Joi = require("@hapi/joi");
 
 const Accounts = {
     index: {
@@ -17,7 +18,27 @@ const Accounts = {
     },
     signup: {
         auth: false,
-        handler: async function(request, h) {
+        validate: {
+            payload: {
+                firstName: Joi.string().required(),
+                lastName: Joi.string().required(),
+                email: Joi.string().email().required(),
+                password: Joi.string().required(),
+            },
+            options: {
+                abortEarly: false,
+            },
+            failAction: function (request, h, error) {
+                return h
+                    .view("signup", {
+                        title: "Sign up error",
+                        errors: error.details,
+                    })
+                    .takeover()
+                    .code(400);
+            },
+        },
+        handler: async function (request, h) {
             try {
                 const payload = request.payload;
                 let user = await User.findByEmail(payload.email);
@@ -29,7 +50,7 @@ const Accounts = {
                     firstName: payload.firstName,
                     lastName: payload.lastName,
                     email: payload.email,
-                    password: payload.password
+                    password: payload.password,
                 });
                 user = await newUser.save();
                 request.cookieAuth.set({ id: user.id });
@@ -37,7 +58,7 @@ const Accounts = {
             } catch (err) {
                 return h.view("signup", { errors: [{ message: err.message }] });
             }
-        }
+        },
     },
 
 
@@ -49,7 +70,25 @@ const Accounts = {
     },
     login: {
         auth: false,
-        handler: async function(request, h) {
+        validate: {
+            payload: {
+                email: Joi.string().email().required(),
+                password: Joi.string().required(),
+            },
+            options: {
+                abortEarly: false,
+            },
+            failAction: function (request, h, error) {
+                return h
+                    .view("login", {
+                        title: "Sign in error",
+                        errors: error.details,
+                    })
+                    .takeover()
+                    .code(400);
+            },
+        },
+        handler: async function (request, h) {
             const { email, password } = request.payload;
             try {
                 let user = await User.findByEmail(email);
@@ -63,7 +102,7 @@ const Accounts = {
             } catch (err) {
                 return h.view("login", { errors: [{ message: err.message }] });
             }
-        }
+        },
     },
 
     logout: {
@@ -86,7 +125,27 @@ const Accounts = {
     },
 
     updateSettings: {
-        handler: async function(request, h) {
+        validate: {
+            payload: {
+                firstName: Joi.string().required(),
+                lastName: Joi.string().required(),
+                email: Joi.string().email().required(),
+                password: Joi.string().required(),
+            },
+            options: {
+                abortEarly: false,
+            },
+            failAction: function (request, h, error) {
+                return h
+                    .view("settings", {
+                        title: "Sign up error",
+                        errors: error.details,
+                    })
+                    .takeover()
+                    .code(400);
+            },
+        },
+        handler: async function (request, h) {
             try {
                 const userEdit = request.payload;
                 const id = request.auth.credentials.id;
@@ -100,8 +159,8 @@ const Accounts = {
             } catch (err) {
                 return h.view("main", { errors: [{ message: err.message }] });
             }
-        }
-    }
+        },
+    },
 };
 
 module.exports = Accounts;

@@ -4,6 +4,7 @@ const Inert = require("@hapi/inert");
 const Vision = require("@hapi/vision");
 const Handlebars = require("handlebars");
 const Cookie = require("@hapi/cookie");
+const Joi = require("@hapi/joi");
 require('./app/models/db');
 const env = require('dotenv');
 
@@ -21,6 +22,7 @@ async function init() {
     await server.register(Inert);
     await server.register(Vision);
     await server.register(Cookie);
+    server.validator(require("@hapi/joi"));
     server.views({
         engines: {
             hbs: require("handlebars"),
