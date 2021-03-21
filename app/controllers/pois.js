@@ -18,18 +18,22 @@ const Pois = {
         },
     },
     poi: {
-        handler: async function (request, h) {
-            const id = request.auth.credentials.id;
-            const user = await User.findById(id);
-            const data = request.payload;
-            const newPoi = new Poi({
-                farmer_name: data.farmer_name,
-                method: data.method,
-                sales_person: user._id,
-            });
-            await newPoi.save();
-            return h.redirect("/report");
-        },
-    },
+        handler: async function(request, h) {
+            try {
+                const id = request.auth.credentials.id;
+                const user = await User.findById(id);
+                const data = request.payload;
+                const newPoi = new Poi({
+                    farmer_name: data.farmer_name,
+                    method: data.method,
+                    donor: user._id
+                });
+                await newPoi.save();
+                return h.redirect("/report");
+            } catch (err) {
+                return h.view("main", { errors: [{ message: err.message }] });
+            }
+        }
+    }
 };
 module.exports = Pois;
