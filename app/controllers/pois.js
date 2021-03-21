@@ -1,4 +1,6 @@
 "use strict";
+const Poi = require("../models/poi");
+const User = require("../models/user");
 
 const Pois = {
     home: {
@@ -7,19 +9,25 @@ const Pois = {
         },
     },
     report: {
-        handler: function (request, h) {
+        handler: async function (request, h) {
+            const pois = await Poi.find().populate("sales_person").lean();
             return h.view("report", {
-                title: "Farm POI entries to Date",
-                pois: this.pois,
+                title: "Farm POI do far",
+                pois: pois
             });
         },
     },
     poi: {
-        handler: function (request, h) {
+        handler: async function (request, h) {
+            const id = request.auth.credentials.id;
+            const user = await User.findById(id);
             const data = request.payload;
-            var sales_personEmail = request.auth.credentials.id;
-            data.sales_person = this.users[sales_personEmail];
-            this.pois.push(data);
+            const newPoi = new Poi({
+                farmer_name: data.farmer_name,
+                method: data.method,
+                sales_person: user._id,
+            });
+            await newPoi.save();
             return h.redirect("/report");
         },
     },

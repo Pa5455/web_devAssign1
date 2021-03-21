@@ -1,8 +1,8 @@
 "use strict";
 
 const Mongoose = require("mongoose");
-const Schema = Mongoose.Schema;
 const Boom = require("@hapi/boom");
+const Schema = Mongoose.Schema;
 
 const userSchema = new Schema({
     firstName: String,

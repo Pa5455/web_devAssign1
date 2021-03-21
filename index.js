@@ -1,6 +1,4 @@
 'use strict';
-
-
 const Hapi = require("@hapi/hapi");
 const Inert = require("@hapi/inert");
 const Vision = require("@hapi/vision");

@@ -4,9 +4,13 @@ const Mongoose = require("mongoose");
 const Schema = Mongoose.Schema;
 
 const poiSchema = new Schema({
-    id: String,
+    farmer_name: String,
     method: String,
+    sales_person: {
+        type: Schema.Types.ObjectID,
+        ref: 'User'
+    }
 
 });
 
-module.exports = Mongoose.model("Farm POI", poiSchema);
+module.exports = Mongoose.model("POI", poiSchema);
