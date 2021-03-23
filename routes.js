@@ -1,5 +1,6 @@
 const Accounts = require("./app/controllers/accounts");
 const Pois = require("./app/controllers/pois");
+const Gallery = require('./app/controllers/gallery');
 
 module.exports = [
     { method: "GET", path: "/", config: Accounts.index },
@@ -11,6 +12,8 @@ module.exports = [
     { method: 'GET', path: '/settings', config: Accounts.showSettings },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
+    { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
+    { method: 'GET', path: '/deleteimage/{id}', config: Gallery.deleteImage },
     { method: "GET", path: "/home", config: Pois.home },
     { method: "POST", path: "/poi", config: Pois.poi},
     { method: "GET", path: "/report", config: Pois.report },
