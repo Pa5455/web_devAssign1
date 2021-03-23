@@ -4,6 +4,7 @@
   "description": "POI app for assignment 1 Enterprise Web DEV 2021 ",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "P Curran",
