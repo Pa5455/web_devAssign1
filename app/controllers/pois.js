@@ -13,7 +13,7 @@ const Pois = {
         handler: async function (request, h) {
             const pois = await Poi.find().populate("sales_person").lean();
             return h.view("report", {
-                title: "Farm POI do far",
+                title: "Farm POI so far",
                 pois: pois
             });
         },
